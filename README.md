@@ -1,4 +1,4 @@
-TThis team work project on printf
+This is a team work project on printf
 The team member are:
 1.  Jeremy Bosire
 2.  Stanley Murigi Njoroge
