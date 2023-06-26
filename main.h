@@ -10,6 +10,8 @@ int _putchar(char c);
 int _printf(const char *format, ...);
 void intToString(int num, char *str);
 int printf_dec(int i);
-
+int printf_int(int i);
+int octalToDecimal(int octal);
+int hexToDecimal(int hex);
 
 #endif
