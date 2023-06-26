@@ -11,7 +11,7 @@ int printf_int(int i)
 	char str[20];
 
 	intToString(i, str);
-	if (str[i] == '0')
+	if (str[j] == '0')
 	{
 		k = octalToDecimal(i);
 		m = k / 10;
@@ -24,7 +24,7 @@ int printf_int(int i)
 			j++;
 		}
 	}
-	else if (str[i] == '0' && str[i + 1] == 'x')
+	else if (str[j] == '0' && str[j + 1] == 'x')
 	{
 		k = hexToDecimal(i);
 		m = k / 10;
