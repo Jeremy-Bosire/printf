@@ -1,5 +1,11 @@
 #include "main.h"
 
+/**
+ * _printf - Function that produces output according to a format
+ * @format: String
+ * @...: Variable number of arguements
+ * Return: The number of characters printed
+ */
 int _printf(const char *format, ...)
 {
 	unsigned int a = 0, b = 0;
@@ -16,14 +22,15 @@ int _printf(const char *format, ...)
 		else if (format[a + 1] == 'c')
 		{
 			_putchar(va_arg(args, int));
-			h++;
+			b++;
 		}
 		else if (format[a + 1] == 's')
 		{
 			_putchar(va_arg(args, *char));
-			h++;
+			b++;
 		}
 
 	}
 	va_end(args);
+	return (b);
 }
