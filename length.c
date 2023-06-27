@@ -1,11 +1,11 @@
 #include "main.h"
 /**
- * length- it is the function that counts and returns the number of characters
+ * length_s- it is the fxn that counts and returns the number of characters
  * Return: rgives the length
  * @str: the string to be counted
  *
  */
-int length(const char *str)
+int length_s(const char *str)
 {
 	return (strlen(str));
 }
