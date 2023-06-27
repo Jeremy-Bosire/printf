@@ -15,5 +15,7 @@ int octalToDecimal(int octal);
 int hexToDecimal(int hex);
 int printf_oct(int i);
 int printf_unt(unsigned int i);
+int printf_hex(int i);
+int printf_HEX(int i);
 
 #endif
