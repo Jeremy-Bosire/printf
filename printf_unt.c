@@ -9,7 +9,7 @@ int printf_unt(unsigned int i)
 {
 	int j = 0;
 	int k = i / 10;
-	char str[k];
+	char *str = malloc(sizeof(char) * k);
 
 	intToString(i, str);
 	while (str[j] != '\0')
@@ -17,5 +17,7 @@ int printf_unt(unsigned int i)
 		_putchar(str[j]);
 		j++;
 	}
+	free(str);
+	str = NULL;
 	return (j);
 }

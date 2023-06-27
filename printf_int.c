@@ -8,15 +8,14 @@
 int printf_int(int i)
 {
 	int m, k, j = 0;
-	char str[20];
+	char str[20], *sent;
 
 	intToString(i, str);
 	if (str[j] == '0')
 	{
 		k = octalToDecimal(i);
 		m = k / 10;
-		char sent[m];
-
+		sent = malloc(sizeof(char) * m);
 		intToString(k, sent);
 		while (sent[j] != '\0')
 		{
@@ -28,8 +27,7 @@ int printf_int(int i)
 	{
 		k = hexToDecimal(i);
 		m = k / 10;
-		char sent[m];
-
+		sent = malloc(sizeof(char) * m);
 		intToString(k, sent);
 		while (sent[j] != '\0')
 		{
@@ -45,5 +43,7 @@ int printf_int(int i)
 			j++;
 		}
 	}
+	free(sent);
+	sent = NULL;
 	return (j);
 }

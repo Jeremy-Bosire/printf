@@ -7,7 +7,7 @@
  */
 void intToString(int num, char *str)
 {
-	int i = 0;
+	int i = 0, start = 0, end;
 	int isNegative = 0;
 
 	if (num < 0)
@@ -27,8 +27,7 @@ void intToString(int num, char *str)
 
 	str[i] = '\0';
 
-	int start = 0;
-	int end = i - 1;
+	end = i - 1;
 
 	while (start < end)
 	{
