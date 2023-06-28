@@ -1,38 +1,46 @@
 #include "main.h"
 
 /**
- * printf_int - Prints a decimal irregardless of whether it was an octal or hex
+ * printf_int - Prints a decimal regardless of whether it was an octal or hex
  * @i: The number
  * Return: The number of characters printed
  */
 int printf_int(int i)
 {
 	int m, k, j = 0;
-	char str[20], *sent;
+	char str[20];
+	char *sent = NULL;
 
 	intToString(i, str);
-	if (str[j] == '0')
+
+	if (str[0] == '0' && str[1] != '\0' && str[1] != 'x')
 	{
 		k = octalToDecimal(i);
-		m = k / 10;
+		m = snprintf(NULL, 0, "%d", k) + 1;
 		sent = malloc(sizeof(char) * m);
-		intToString(k, sent);
-		while (sent[j] != '\0')
+		if (sent != NULL)
 		{
-			_putchar(sent[j]);
-			j++;
+			snprintf(sent, m, "%d", k);
+			while (sent[j] != '\0')
+			{
+				_putchar(sent[j]);
+				j++;
+			}
 		}
 	}
-	else if (str[j] == '0' && str[j + 1] == 'x')
+	else if (str[0] == '0' && str[1] == 'x')
 	{
 		k = hexToDecimal(i);
-		m = k / 10;
+		m = snprintf(NULL, 0, "%d", k) + 1;
 		sent = malloc(sizeof(char) * m);
-		intToString(k, sent);
-		while (sent[j] != '\0')
+		if (sent != NULL)
 		{
-			_putchar(sent[j]);
-			j++;
+			snprintf(sent, m, "%d", k);
+			while (sent[j] != '\0')
+			{
+				_putchar(sent[j]);
+				j++;
+			}
 		}
 	}
 	else
@@ -43,7 +51,8 @@ int printf_int(int i)
 			j++;
 		}
 	}
+
 	free(sent);
-	sent = NULL;
 	return (j);
 }
+

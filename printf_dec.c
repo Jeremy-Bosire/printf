@@ -8,16 +8,21 @@
 int printf_dec(int i)
 {
 	int j = 0;
-	int k = i / 10;
+	int k = snprintf(NULL, 0, "%d", i) + 1;
 	char *str = malloc(sizeof(char) * k);
 
-	intToString(i, str);
+	if (str == NULL)
+	{
+		return (0);
+	}
+
+	snprintf(str, k, "%d", i);
 	while (str[j] != '\0')
 	{
 		_putchar(str[j]);
 		j++;
 	}
 	free(str);
-	str = NULL;
 	return (j);
 }
+

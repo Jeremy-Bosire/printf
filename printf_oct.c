@@ -10,12 +10,19 @@ int printf_oct(int i)
 	int count = 0, j = 0, l;
 	int octalNum[100];
 
+	if (i == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
+
 	while (i > 0)
 	{
 		octalNum[j] = i % 8;
 		i /= 8;
 		j++;
 	}
+
 	for (l = j - 1; l >= 0; l--)
 	{
 		int N = octalNum[l] + '0';
@@ -23,5 +30,7 @@ int printf_oct(int i)
 		_putchar((char)(N));
 		count++;
 	}
+
 	return (count);
 }
+
